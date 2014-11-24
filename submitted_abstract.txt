@@ -1,0 +1,12 @@
+Analyzing Simulated LSST Surveys With MAF
+
+
+Peter Yoachim, R. Lynne Jones, Srinivasan Chandrasekharan, Andrew P. Connolly, Kem H. Cook, Željko Ivezic, K. Simon Krughoff, Catherine Petry, Stephen T. Ridgway
+
+
+The LSST will make around 2.5 million observations in 6 filters over a 10-year survey.  Optimizing the scheduling of these observations involves a variety of scientific trade-offs.  We illustrate the wide variety of survey metrics that can be designed and implemented with the Metrics Analysis Framework using simulated LSST surveys.  In particular, we illustrate how MAF can (1) be used to compare dithering strategies, (2) quantify how well the observing cadence allows for the characterization of periodic sources, and (3) quantify how efficiently the survey discovers solar system objects. There is nothing LSST-specific about MAF, and we show how it can be easily extended to analyze other surveys such as Stripe 82 in SDSS.
+
+
+
+
+LocalWords:  MAF Lynne Krughoff Opsim SDSS
