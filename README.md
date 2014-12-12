@@ -1,0 +1,1 @@
+AAS posters should not be larger than 44x44
