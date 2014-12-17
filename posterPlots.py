@@ -37,7 +37,7 @@ slicerList.append(slicer)
 
 
 # Let's do a really high res with the chip gaps on!
-nside = 1028
+nside = 2048
 m1 = configureMetric('CountMetric', kwargs={'col':'expMJD'})
 slicer = configureSlicer('HealpixSlicer',
                        kwargs={'nside':nside, 'spatialkey1':'fieldRA', 'spatialkey2':'fieldDec',
