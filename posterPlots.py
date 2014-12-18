@@ -34,10 +34,20 @@ slicer=configureSlicer('HealpixSlicer',
                        constraints=['filter="%s"'%band], metadata='dithered')
 slicerList.append(slicer)
 
+# Look at the proper motion precision
+m1 = configureMetric('ProperMotionMetric', kwargs={'rmag':23, 'SedTemplate':'K','metricName':'Proper Motion 23mag'}
+                     plotDict={'colorMin':.1, 'colorMax':10, 'units':'Proper Motion Precision (mas/yr)'})
+slicer=configureSlicer('HealpixSlicer',
+                       kwargs={'nside':nside, 'spatialkey1':'ditheredRA', 'spatialkey2':'ditheredDec'},
+                       metricDict=makeDict(*[m1]), constraints=[''])
+slicerList.append(slicer)
+
 
 
 # Let's do a really high res with the chip gaps on!
+
 nside = 2048
+
 m1 = configureMetric('CountMetric', kwargs={'col':'expMJD'})
 slicer = configureSlicer('HealpixSlicer',
                        kwargs={'nside':nside, 'spatialkey1':'fieldRA', 'spatialkey2':'fieldDec',
