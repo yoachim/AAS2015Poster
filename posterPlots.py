@@ -37,7 +37,7 @@ slicerList.append(slicer)
 # Look at the proper motion precision
 m1 = configureMetric('ProperMotionMetric', kwargs={'rmag':23, 'SedTemplate':'K','metricName':'Proper Motion 23mag'},
                      plotDict={'colorMin':.2, 'colorMax':5, 'units':'Proper Motion Precision (mas/yr)',
-                               'logScale':True, 'nTicks':5, 'cbarFormat':'%.1f'})
+                               'logScale':True, 'nTicks':5, 'cbarFormat':'%.1f', 'xMax':80, 'xMin':0})
 slicer=configureSlicer('HealpixSlicer',
                        kwargs={'nside':nside, 'spatialkey1':'ditheredRA', 'spatialkey2':'ditheredDec'},
                        metricDict=makeDict(*[m1]), constraints=[''])
