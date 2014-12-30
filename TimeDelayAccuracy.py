@@ -32,6 +32,7 @@
 # In[1]:
 
 import os
+import glob
 # Import MAF modules.
 import lsst.sims.maf.db as db
 import lsst.sims.maf.slicers as slicers
@@ -231,7 +232,8 @@ def plotMetrics(sm, metadata=None, order=0):
     iid = sm.findIids(metricName=metricName, metadata=metadata)[0]
     # Set the plotting parameters for this value.
     maxFrac = 40
-    sm.plotDicts[iid].update({'xMin':minVal, 'xMax':maxFrac, 'colorMin':minVal, 'colorMax':maxFrac})
+    sm.plotDicts[iid].update({'xMin':minVal, 'xMax':maxFrac, 'colorMin':minVal,
+                              'colorMax':maxFrac, 'cbarFormat':'%i'})
     sm.displayDicts[iid].update({'group':'Time Delay Challenge', 'order':order, 'caption':'Time Delay Challenge Fraction plots.'})
     # 'figs' is a dictionary of the figure names:fig numbers created when plotting this data.
     sm.plotMetric(iid)
@@ -289,9 +291,9 @@ for i, sqlconstraint in enumerate(sqlconstraints):
 
 # In[14]:
 
-metricdatafilesA = get_ipython().getoutput(u'ls $outputDir/*Accuracy*npz')
-metricdatafilesP = get_ipython().getoutput(u'ls $outputDir/*Precision*npz')
-metricdatafilesF = get_ipython().getoutput(u'ls $outputDir/*Rate*npz')
+metricdatafilesA = glob.glob(outputDir+'/*Accuracy*npz')#get_ipython().getoutput(u'ls $outputDir/*Accuracy*npz')
+metricdatafilesP = glob.glob(outputDir+'/*Precision*npz')#get_ipython().getoutput(u'ls $outputDir/*Precision*npz')
+metricdatafilesF = glob.glob(outputDir+'/*Rate*npz') #get_ipython().getoutput(u'ls $outputDir/*Rate*npz')
 metricdatafiles = metricdatafilesA + metricdatafilesP + metricdatafilesF
 print metricdatafiles
 
