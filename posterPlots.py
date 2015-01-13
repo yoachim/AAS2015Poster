@@ -56,7 +56,7 @@ slicer = configureSlicer('HealpixSlicer',
                        metricDict=makeDict(*[m1]),
                        constraints=['filter="%s" and  fieldRA > 0 and fieldRA < %f and  fieldDec < 0 and fieldDec > %f'%
                                     (band, np.radians(10), np.radians(-10))])
-#slicerList.append(slicer)
+slicerList.append(slicer)
 
 
 root.slicers=makeDict(*slicerList)
