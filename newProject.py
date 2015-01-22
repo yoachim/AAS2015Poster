@@ -2,7 +2,9 @@ import numpy as np
 import healpy as hp
 import matplotlib.pylab as plt
 
-data = np.load('OutDir/ops1_1140_Count_expMJD_r_and_fieldRA_gt_0_and_fieldRA_lt_0_174533_and_fieldDec_lt_0_and_fieldDec_gt_-0_174533_HEAL.npz')
+directory = 'GapsDir'
+
+data = np.load(directory'/ops1_1140_Count_expMJD_r_and_fieldRA_gt_0_and_fieldRA_lt_0_174533_and_fieldDec_lt_0_and_fieldDec_gt_-0_174533_HEAL.npz')
 
 mapv = data['metricValues']
 mapv[data['mask']] = hp.UNSEEN
