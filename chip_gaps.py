@@ -24,7 +24,7 @@ nside = 2048/2
 m1 = configureMetric('CountMetric', kwargs={'col':'expMJD'})
 slicer = configureSlicer('HealpixSlicer',
                        kwargs={'nside':nside, 'spatialkey1':'fieldRA', 'spatialkey2':'fieldDec',
-                               'useCamera':True},
+                               'useCamera':True, 'radius':2.014},
                        metricDict=makeDict(*[m1]),
                        constraints=['filter="%s" and  fieldRA > 0 and fieldRA < %f and  fieldDec < 0 and fieldDec > %f'%
                                     (band, np.radians(10), np.radians(-10))])
